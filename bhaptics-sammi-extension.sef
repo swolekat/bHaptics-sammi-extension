@@ -2,15 +2,15 @@
 bHaptics Sammi Extension
 
 [extension_info]
-version 0.0.1 by Swolekat
+version 0.0.2 by Swolekat
 [insert_external]
 
 [insert_command]
 SAMMI.extCommand("BHaptics Dot", color = 3355443, height = 52,
   {
-    index: ["Index", 14, 0, null, []],
+    index: ["Index", 14, "0", null, []],
     intensity: ["Intensity", 11, 1, null, []],
-    duration: ["Duration (ms)", 14, 1000, null, []],
+    duration: ["Duration (ms)", 14, "1000", null, []],
     position: ["Position", 19, "VestFront", null, ["VestFront", "VestBack"]],
   }
 );
@@ -329,7 +329,7 @@ window.vestControl = {
 
 function sendBHapticsDot(json){
     const {index, intensity, duration, position} = json;
-    window.vestControl.sendDot({index: Number.parseInt(index), intensity: Math.round(intensity *100), duration, position});
+    window.vestControl.sendDot({index: Number.parseInt(index), intensity: Math.round(intensity *100), Number.parseInt(duration), position});
 }
 
 function sendBHapticsPath(json){
