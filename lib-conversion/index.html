@@ -6,6 +6,7 @@
 </head>
 <body>
 <script type="module" src="/main.js"></script>
-<button onclick="vestControl.sendDot({index: 0, intensity: 100, duration: 300})">test</button>
+<button onclick="vestControl.sendDot({index: 0, intensity: 100, duration: 300})">test Dot </button>
+<button onclick="vestControl.sendPath({points: [{Intensity: 100, X: 0, Y: 1}, {Intensity: 100, X: 1, Y: 1}], duration: 300})">test Path</button>
 </body>
 </html>
