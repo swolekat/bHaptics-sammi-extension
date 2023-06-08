@@ -1,0 +1,17 @@
+{
+  "name": "bHaptics-sammi-plugin",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite lib-conversion",
+    "build": "vite build lib-conversion -c vite.config.js",
+    "preview": "vite preview lib-conversion"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
+  },
+  "type": "module",
+  "dependencies": {
+    "tact-js": "^0.4.1"
+  }
+}
