@@ -2,7 +2,7 @@
 bHaptics Sammi Extension
 
 [extension_info]
-version 0.0.2 by Swolekat
+version 0.0.3 by Swolekat
 [insert_external]
 
 [insert_command]
@@ -29,6 +29,7 @@ case "BHaptics Path":{
   sendBHapticsPath(SAMMIJSON);
 } break
 [insert_script]
+(function(){
 /* This comes from lib-conversion/dist/lib-conversion.js */
 var N = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
 function m(t) {
@@ -329,7 +330,7 @@ window.vestControl = {
 
 function sendBHapticsDot(json){
     const {index, intensity, duration, position} = json;
-    window.vestControl.sendDot({index: Number.parseInt(index), intensity: Math.round(intensity *100), Number.parseInt(duration), position});
+    window.vestControl.sendDot({index: Number.parseInt(index), intensity: Math.round(intensity *100), duration: Number.parseInt(duration), position});
 }
 
 function sendBHapticsPath(json){
@@ -337,6 +338,8 @@ function sendBHapticsPath(json){
  window.vestControl.sendPath({points: JSON.parse(points), duration, position});
 }
 
+window.sendBHapticsDot = sendBHapticsDot;
+window.sendBHapticsPath = sendBHapticsPath;
 
-
+}());
 [insert_over]
